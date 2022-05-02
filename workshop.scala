@@ -69,7 +69,7 @@ order by year desc
 
 %scala
 val traDF = indicatorDF.select(year,value)
-                .filter($"indicatorCode" === "TRD.ZS" and $countryCode.isin("IND","CHN")) 
+                .filter($"indicatorCode" === "TRD.ZS" and $"countryCode".isin("IND","CHN")) 
                 .orderBy($"year" desc)
 
 traDF.show()                
